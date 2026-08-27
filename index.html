@@ -17,7 +17,7 @@
   <!-- AOS (Animate on Scroll) CSS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
-  <!-- Tailwind CSS CDN with custom config -->
+  <!-- Tailwind CSS CDN with custom Electric Indigo & Violet config -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -30,21 +30,22 @@
           },
           colors: {
             primary: {
-              50: '#ecfdf5',
-              100: '#d1fae5',
-              400: '#34d399',
-              500: '#10b981',
-              600: '#059669',
-              700: '#047857',
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              400: '#818cf8',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
             },
-            tealAccent: {
-              400: '#2dd4bf',
-              500: '#14b8a6',
-              600: '#0d9488',
+            violetAccent: {
+              400: '#c084fc',
+              500: '#a855f7',
+              600: '#9333ea',
+              700: '#7e22ce',
             },
-            darkBg: '#090d16',
-            cardBg: '#111827',
-            cardBorder: 'rgba(16, 185, 129, 0.15)',
+            darkBg: '#080a12',
+            cardBg: '#111422',
+            cardBorder: 'rgba(99, 102, 241, 0.15)',
           }
         }
       }
@@ -53,31 +54,31 @@
 
   <style>
     body {
-      background-color: #090d16;
+      background-color: #080a12;
       color: #f3f4f6;
       overflow-x: hidden;
     }
     
     /* Subtle Background Grid & Glows */
     .bg-grid-pattern {
-      background-image: radial-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(99, 102, 241, 0.12) 1px, transparent 1px);
       background-size: 32px 32px;
     }
     
-    .emerald-glow {
-      background: radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.15) 0%, rgba(20, 184, 166, 0.05) 50%, transparent 70%);
+    .ambient-glow {
+      background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.18) 0%, rgba(168, 85, 247, 0.08) 50%, transparent 70%);
     }
 
     .bento-card {
-      background: rgba(17, 24, 39, 0.75);
-      backdrop-filter: blur(12px);
+      background: rgba(17, 20, 34, 0.8);
+      backdrop-filter: blur(14px);
       border: 1px solid rgba(255, 255, 255, 0.07);
       transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .bento-card:hover {
-      border-color: rgba(16, 185, 129, 0.4);
+      border-color: rgba(99, 102, 241, 0.45);
       transform: translateY(-3px);
-      box-shadow: 0 16px 36px -10px rgba(16, 185, 129, 0.12);
+      box-shadow: 0 16px 36px -10px rgba(99, 102, 241, 0.2);
     }
 
     /* 3D Tilt Card Special Style */
@@ -91,42 +92,45 @@
 
     /* ProtoSem Custom Styles */
     .protosem-card {
-      background: rgba(17, 24, 39, 0.8);
+      background: rgba(17, 20, 34, 0.85);
       backdrop-filter: blur(14px);
       border: 1px solid rgba(255, 255, 255, 0.07);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .protosem-card:hover {
-      border-color: rgba(16, 185, 129, 0.5);
+      border-color: rgba(99, 102, 241, 0.55);
       transform: translateY(-4px);
-      box-shadow: 0 14px 30px -8px rgba(16, 185, 129, 0.2);
+      box-shadow: 0 14px 30px -8px rgba(99, 102, 241, 0.25);
     }
-    .phase-timeline-line {
-      background: linear-gradient(to bottom, rgba(16, 185, 129, 0.4), rgba(20, 184, 166, 0.1));
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
     }
-    .node-pulse {
-      box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-      animation: pulse-ring 2s infinite cubic-bezier(0.66, 0, 0, 1);
+    ::-webkit-scrollbar-track {
+      background: #080a12;
     }
-    @keyframes pulse-ring {
-      to {
-        box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
-      }
+    ::-webkit-scrollbar-thumb {
+      background: #1e2238;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #6366f1;
     }
   </style>
 </head>
 
 <body class="bg-darkBg text-slate-100 font-sans antialiased selection:bg-primary-500 selection:text-white relative bg-grid-pattern min-h-screen">
 
-  <!-- Ambient Glow Elements -->
-  <div class="fixed top-0 left-1/4 w-96 h-96 emerald-glow pointer-events-none -z-10 blur-3xl"></div>
-  <div class="fixed bottom-10 right-1/4 w-[500px] h-[500px] emerald-glow pointer-events-none -z-10 blur-3xl opacity-70"></div>
+  <!-- Ambient Glow Elements (Electric Indigo & Violet) -->
+  <div class="fixed top-0 left-1/4 w-96 h-96 ambient-glow pointer-events-none -z-10 blur-3xl"></div>
+  <div class="fixed bottom-10 right-1/4 w-[500px] h-[500px] ambient-glow pointer-events-none -z-10 blur-3xl opacity-70"></div>
 
   <!-- Navigation Bar -->
   <nav class="sticky top-0 z-50 backdrop-blur-md bg-darkBg/80 border-b border-white/5 py-4 px-6 md:px-12">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <a href="#" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-tealAccent-500 flex items-center justify-center text-darkBg font-extrabold text-lg shadow-lg shadow-primary-500/20 group-hover:scale-105 transition-transform">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 via-indigo-600 to-violetAccent-500 flex items-center justify-center text-white font-extrabold text-lg shadow-lg shadow-primary-500/25 group-hover:scale-105 transition-transform">
           AE
         </div>
         <div>
@@ -138,8 +142,8 @@
       <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
         <a href="#about" class="hover:text-primary-400 transition-colors">About</a>
         <a href="#experience" class="hover:text-primary-400 transition-colors">Experience</a>
-        <a href="#protosem" class="hover:text-primary-400 transition-colors flex items-center gap-1.5 text-emerald-400 font-semibold">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <a href="#protosem" class="hover:text-primary-400 transition-colors flex items-center gap-1.5 text-indigo-400 font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span>
           <span>ProtoSem</span>
         </a>
         <a href="#skills" class="hover:text-primary-400 transition-colors">Skills</a>
@@ -148,7 +152,7 @@
       </div>
 
       <div class="flex items-center gap-3">
-        <a href="resume.html" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500 hover:text-darkBg transition-all duration-300 shadow-sm shadow-emerald-500/10">
+        <a href="resume.html" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-xl text-xs md:text-sm font-semibold bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 hover:bg-indigo-500 hover:text-white transition-all duration-300 shadow-sm shadow-indigo-500/10">
           <i class="fa-solid fa-file-lines"></i>
           <span>ATS Resume</span>
         </a>
@@ -169,13 +173,13 @@
       <!-- Left Content / Headline -->
       <div class="lg:col-span-7 space-y-6" data-aos="fade-right" data-aos-duration="1000">
         <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-500/10 border border-primary-500/20 text-xs font-semibold text-primary-400">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
           <span>Available for High-Impact Roles & Internships</span>
         </div>
 
         <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white leading-tight tracking-tight">
           Driving Business Value through <br class="hidden sm:inline"/>
-          <span class="bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-500 bg-clip-text text-transparent">
+          <span class="bg-gradient-to-r from-indigo-400 via-violet-300 to-purple-400 bg-clip-text text-transparent">
             Supply Chain, Finance & Innovation.
           </span>
         </h1>
@@ -186,18 +190,18 @@
 
         <!-- Dynamic Typing Subtitle -->
         <div class="flex items-center gap-2 text-slate-400 text-sm sm:text-base font-mono">
-          <i class="fa-solid fa-chevron-right text-emerald-400 text-xs"></i>
+          <i class="fa-solid fa-chevron-right text-indigo-400 text-xs"></i>
           <span>Focus: </span>
-          <span id="typed-text" class="text-emerald-400 font-semibold"></span>
+          <span id="typed-text" class="text-indigo-400 font-semibold"></span>
         </div>
 
         <!-- Call to Action Buttons -->
         <div class="flex flex-wrap items-center gap-4 pt-2">
-          <a href="#contact" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-primary-500 to-tealAccent-500 text-darkBg font-bold text-sm hover:opacity-90 hover:shadow-lg hover:shadow-primary-500/25 transition-all duration-300 flex items-center gap-2">
+          <a href="#contact" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-primary-500 via-indigo-600 to-violetAccent-500 text-white font-bold text-sm hover:opacity-95 hover:shadow-lg hover:shadow-primary-500/25 transition-all duration-300 flex items-center gap-2">
             <span>Get in Touch</span>
             <i class="fa-solid fa-arrow-right text-xs"></i>
           </a>
-          <a href="resume.html" target="_blank" class="px-6 py-3.5 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-white font-semibold text-sm transition-all duration-300 flex items-center gap-2">
+          <a href="resume.html" target="_blank" class="px-6 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 text-white font-semibold text-sm transition-all duration-300 flex items-center gap-2">
             <i class="fa-solid fa-arrow-down text-xs text-primary-400"></i>
             <span>View Full Resume</span>
           </a>
@@ -206,15 +210,15 @@
         <!-- Quick Proof Badges -->
         <div class="pt-4 flex flex-wrap gap-6 text-xs text-slate-400 border-t border-white/5">
           <div class="flex items-center gap-2">
-            <i class="fa-solid fa-award text-emerald-400 text-base"></i>
+            <i class="fa-solid fa-award text-indigo-400 text-base"></i>
             <span>Mahatma Gandhi Scholar</span>
           </div>
           <div class="flex items-center gap-2">
-            <i class="fa-solid fa-lightbulb text-teal-400 text-base"></i>
+            <i class="fa-solid fa-lightbulb text-violet-400 text-base"></i>
             <span>Intern @ Forge Innovation & Ventures</span>
           </div>
           <div class="flex items-center gap-2">
-            <i class="fa-solid fa-store text-emerald-400 text-base"></i>
+            <i class="fa-solid fa-store text-indigo-400 text-base"></i>
             <span>E-Commerce Co-Founder</span>
           </div>
         </div>
@@ -223,29 +227,29 @@
       <!-- Right Column: 3D Floating Profile Card (Tilt.js) -->
       <div class="lg:col-span-5 flex justify-center" data-aos="zoom-in" data-aos-duration="1000">
         <div class="hero-card-3d w-full max-w-md" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.25">
-          <div class="bento-card rounded-3xl p-6 sm:p-8 border border-emerald-500/20 shadow-2xl relative overflow-hidden group">
+          <div class="bento-card rounded-3xl p-6 sm:p-8 border border-indigo-500/25 shadow-2xl relative overflow-hidden group">
             
             <!-- Card Ambient Background Glow -->
-            <div class="absolute -right-16 -top-16 w-48 h-48 bg-emerald-500/20 rounded-full blur-3xl group-hover:bg-emerald-500/30 transition-all"></div>
+            <div class="absolute -right-16 -top-16 w-48 h-48 bg-indigo-500/20 rounded-full blur-3xl group-hover:bg-indigo-500/30 transition-all"></div>
             
             <div class="hero-inner flex flex-col items-center text-center relative z-10 space-y-4">
               
-              <!-- Monogram Badge Avatar (No Photo Needed) -->
+              <!-- Monogram Badge Avatar (Electric Indigo & Violet) -->
               <div class="relative">
-                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl p-1 bg-gradient-to-tr from-emerald-400 via-teal-500 to-emerald-600 shadow-xl shadow-emerald-500/25">
-                  <div class="w-full h-full rounded-xl bg-slate-950 flex flex-col items-center justify-center border border-emerald-500/30 select-none">
-                    <span class="text-3xl sm:text-4xl font-heading font-extrabold bg-gradient-to-br from-emerald-300 via-teal-200 to-emerald-500 bg-clip-text text-transparent">AE</span>
-                    <span class="text-[9px] uppercase tracking-widest text-emerald-400 font-bold mt-1">Verified</span>
+                <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl p-1 bg-gradient-to-tr from-indigo-500 via-violet-500 to-purple-600 shadow-xl shadow-indigo-500/25">
+                  <div class="w-full h-full rounded-xl bg-slate-950 flex flex-col items-center justify-center border border-indigo-500/30 select-none">
+                    <span class="text-3xl sm:text-4xl font-heading font-extrabold bg-gradient-to-br from-indigo-300 via-violet-200 to-purple-400 bg-clip-text text-transparent">AE</span>
+                    <span class="text-[9px] uppercase tracking-widest text-indigo-400 font-bold mt-1">Verified</span>
                   </div>
                 </div>
-                <span class="absolute bottom-1 right-1 w-5 h-5 bg-emerald-500 border-2 border-darkBg rounded-full flex items-center justify-center" title="Active">
+                <span class="absolute bottom-1 right-1 w-5 h-5 bg-indigo-500 border-2 border-darkBg rounded-full flex items-center justify-center" title="Active">
                   <i class="fa-solid fa-check text-[10px] text-white"></i>
                 </span>
               </div>
 
               <div>
                 <h3 class="text-2xl font-heading font-bold text-white">Akshaya Elango</h3>
-                <p class="text-sm text-emerald-400 font-medium">BBA • Supply Chain & Finance</p>
+                <p class="text-sm text-indigo-400 font-medium">BBA • Supply Chain & Finance</p>
                 <p class="text-xs text-slate-400 mt-1">Kumaraguru College of Liberal Arts & Science</p>
               </div>
 
@@ -253,17 +257,17 @@
               <div class="grid grid-cols-2 gap-3 w-full pt-2">
                 <div class="bg-white/5 rounded-xl p-3 border border-white/5 text-left">
                   <span class="text-[10px] text-slate-400 uppercase tracking-wider block font-semibold">Scholarship</span>
-                  <span class="text-sm font-bold text-emerald-400">Top 10 Rank</span>
+                  <span class="text-sm font-bold text-indigo-400">Top 10 Rank</span>
                 </div>
                 <div class="bg-white/5 rounded-xl p-3 border border-white/5 text-left">
                   <span class="text-[10px] text-slate-400 uppercase tracking-wider block font-semibold">Venture</span>
-                  <span class="text-sm font-bold text-teal-300">Co-Founder</span>
+                  <span class="text-sm font-bold text-violet-300">Co-Founder</span>
                 </div>
               </div>
 
               <!-- Quick Contact Links in Card -->
               <div class="w-full pt-2 flex items-center justify-center gap-3">
-                <a href="mailto:ea.akshaya@gmail.com" class="w-full py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-xs font-semibold flex items-center justify-center gap-2 transition-all">
+                <a href="mailto:ea.akshaya@gmail.com" class="w-full py-2.5 rounded-xl bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 text-xs font-semibold flex items-center justify-center gap-2 transition-all">
                   <i class="fa-solid fa-envelope"></i>
                   <span>ea.akshaya@gmail.com</span>
                 </a>
@@ -283,7 +287,7 @@
     <!-- Section: Bento Grid Layout -->
     <section id="about">
       <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
-        <h2 class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-2">Executive Overview</h2>
+        <h2 class="text-xs font-bold uppercase tracking-widest text-indigo-400 mb-2">Executive Overview</h2>
         <p class="text-3xl sm:text-4xl font-heading font-extrabold text-white">Experience, Skills & Strategic Impact</p>
       </div>
 
@@ -294,7 +298,7 @@
         <div class="bento-card rounded-3xl p-6 sm:p-8 lg:col-span-8 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
           <div>
             <div class="flex items-center gap-3 mb-4">
-              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+              <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
                 <i class="fa-solid fa-bullseye text-lg"></i>
               </div>
               <div>
@@ -303,41 +307,41 @@
               </div>
             </div>
             <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-              I am a disciplined Business Administration student with a strong passion for <span class="text-emerald-400 font-semibold">Logistics, Supply Chain Management, and Finance</span>. I focus on bridging academic rigor with practical execution — applying analytical thinking, cost optimization, and business fundamentals to drive organizational efficiency.
+              I am a disciplined Business Administration student with a strong passion for <span class="text-indigo-400 font-semibold">Logistics, Supply Chain Management, and Finance</span>. I focus on bridging academic rigor with practical execution — applying analytical thinking, cost optimization, and business fundamentals to drive organizational efficiency.
             </p>
             <div class="mt-4 p-4 rounded-2xl bg-white/5 border border-white/5 text-xs sm:text-sm text-slate-300 flex items-start gap-3">
-              <i class="fa-solid fa-quote-left text-emerald-400 mt-1"></i>
+              <i class="fa-solid fa-quote-left text-indigo-400 mt-1"></i>
               <span>"Combining hands-on entrepreneurial execution with corporate innovation frameworks to deliver measurable business results."</span>
             </div>
           </div>
 
           <div class="flex flex-wrap gap-2 pt-6">
-            <span class="px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-medium">Analytical Problem Solving</span>
-            <span class="px-3 py-1 rounded-lg bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-medium">Supply Chain Strategy</span>
-            <span class="px-3 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-xs font-medium">Cost Optimization</span>
-            <span class="px-3 py-1 rounded-lg bg-teal-500/10 border border-teal-500/20 text-teal-300 text-xs font-medium">Discipline & Leadership</span>
+            <span class="px-3 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-medium">Analytical Problem Solving</span>
+            <span class="px-3 py-1 rounded-lg bg-violet-500/10 border border-violet-500/20 text-violet-300 text-xs font-medium">Supply Chain Strategy</span>
+            <span class="px-3 py-1 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-medium">Cost Optimization</span>
+            <span class="px-3 py-1 rounded-lg bg-violet-500/10 border border-violet-500/20 text-violet-300 text-xs font-medium">Discipline & Leadership</span>
           </div>
         </div>
 
         <!-- Bento Card 2: Academic Honor & Scholarship (Span 4) -->
-        <div class="bento-card rounded-3xl p-6 sm:p-8 lg:col-span-4 flex flex-col justify-between border-emerald-500/30 relative overflow-hidden" data-aos="fade-up" data-aos-delay="200" id="education">
-          <div class="absolute -right-8 -bottom-8 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl"></div>
+        <div class="bento-card rounded-3xl p-6 sm:p-8 lg:col-span-4 flex flex-col justify-between border-indigo-500/30 relative overflow-hidden" data-aos="fade-up" data-aos-delay="200" id="education">
+          <div class="absolute -right-8 -bottom-8 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl"></div>
           
           <div>
-            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400 to-emerald-500 flex items-center justify-center text-darkBg font-bold text-xl mb-4 shadow-lg shadow-emerald-500/20">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400 to-indigo-500 flex items-center justify-center text-darkBg font-bold text-xl mb-4 shadow-lg shadow-indigo-500/20">
               <i class="fa-solid fa-trophy"></i>
             </div>
             <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Prestigious Honor</span>
             <h3 class="text-xl font-heading font-bold text-white mt-1">Mahatma Gandhi Scholarship</h3>
             <p class="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed">
-              Awarded for securing a merit standing among the <strong class="text-emerald-400">Top 10 students</strong> in the entire class with a competitive scholarship grant of <span class="text-white font-semibold">₹10,000</span>.
+              Awarded for securing a merit standing among the <strong class="text-indigo-400">Top 10 students</strong> in the entire class with a competitive scholarship grant of <span class="text-white font-semibold">₹10,000</span>.
             </p>
           </div>
 
           <div class="pt-6 border-t border-white/5">
             <div class="flex items-center justify-between text-xs">
               <span class="text-slate-400">Award Criterion</span>
-              <span class="text-emerald-400 font-semibold">Academic Excellence</span>
+              <span class="text-indigo-400 font-semibold">Academic Excellence</span>
             </div>
           </div>
         </div>
@@ -347,24 +351,24 @@
           <div>
             <div class="flex items-start justify-between mb-4">
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400">
+                <div class="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/30 flex items-center justify-center text-violet-400">
                   <i class="fa-solid fa-rocket text-lg"></i>
                 </div>
                 <div>
                   <h3 class="text-lg font-heading font-bold text-white">Forge Innovation and Ventures</h3>
-                  <p class="text-xs text-teal-400 font-medium">Intern • Innovation & Strategy</p>
+                  <p class="text-xs text-violet-400 font-medium">Intern • Innovation & Strategy</p>
                 </div>
               </div>
-              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 uppercase">Current Role</span>
+              <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 uppercase">Current Role</span>
             </div>
 
             <ul class="space-y-2.5 text-xs sm:text-sm text-slate-300 mt-4">
               <li class="flex items-start gap-2">
-                <i class="fa-solid fa-circle-check text-emerald-400 text-xs mt-1"></i>
+                <i class="fa-solid fa-circle-check text-indigo-400 text-xs mt-1"></i>
                 <span>Gaining hands-on corporate immersion in startup incubation, industrial innovation, and venture growth frameworks.</span>
               </li>
               <li class="flex items-start gap-2">
-                <i class="fa-solid fa-circle-check text-emerald-400 text-xs mt-1"></i>
+                <i class="fa-solid fa-circle-check text-indigo-400 text-xs mt-1"></i>
                 <span>Assisting in analytical assessments, program coordination, and multi-stakeholder operational alignment.</span>
               </li>
             </ul>
@@ -381,12 +385,12 @@
           <div>
             <div class="flex items-start justify-between mb-4">
               <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
                   <i class="fa-solid fa-bag-shopping text-lg"></i>
                 </div>
                 <div>
                   <h3 class="text-lg font-heading font-bold text-white">Direct-to-Consumer Clothing Brand</h3>
-                  <p class="text-xs text-emerald-400 font-medium">Co-Founder & Business Partner</p>
+                  <p class="text-xs text-indigo-400 font-medium">Co-Founder & Business Partner</p>
                 </div>
               </div>
               <span class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-white/10 text-slate-300 border border-white/10">Active Business</span>
@@ -394,18 +398,18 @@
 
             <ul class="space-y-2.5 text-xs sm:text-sm text-slate-300 mt-4">
               <li class="flex items-start gap-2">
-                <i class="fa-solid fa-circle-check text-emerald-400 text-xs mt-1"></i>
+                <i class="fa-solid fa-circle-check text-indigo-400 text-xs mt-1"></i>
                 <span>Co-managing end-to-end social commerce operations across sourcing, inventory handling, and customer order fulfillment.</span>
               </li>
               <li class="flex items-start gap-2">
-                <i class="fa-solid fa-circle-check text-emerald-400 text-xs mt-1"></i>
+                <i class="fa-solid fa-circle-check text-indigo-400 text-xs mt-1"></i>
                 <span>Overseeing pricing strategies, cash flow tracking, customer acquisition, and multi-partner operational workflow.</span>
               </li>
             </ul>
           </div>
 
           <div class="pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-slate-400">
-            <i class="fa-solid fa-chart-line text-emerald-400"></i>
+            <i class="fa-solid fa-chart-line text-indigo-400"></i>
             <span>Inventory Management • Pricing Strategy • Customer Relations</span>
           </div>
         </div>
@@ -414,7 +418,7 @@
         <div class="bento-card rounded-3xl p-6 sm:p-8 lg:col-span-7 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="500" id="skills">
           <div>
             <div class="flex items-center gap-3 mb-6">
-              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+              <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
                 <i class="fa-solid fa-toolbox text-lg"></i>
               </div>
               <div>
@@ -428,13 +432,13 @@
               <div>
                 <div class="flex justify-between text-xs font-semibold mb-1.5">
                   <span class="flex items-center gap-2 text-slate-200">
-                    <i class="fa-solid fa-file-excel text-emerald-400"></i>
+                    <i class="fa-solid fa-file-excel text-indigo-400"></i>
                     <span>Microsoft Excel (Data Analysis, Modeling, Formulas)</span>
                   </span>
-                  <span class="text-emerald-400 font-mono">Intermediate</span>
+                  <span class="text-indigo-400 font-mono">Intermediate</span>
                 </div>
-                <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
-                  <div class="bg-gradient-to-r from-emerald-500 to-tealAccent-400 h-2 rounded-full w-[80%]"></div>
+                <div class="w-full bg-slate-900 rounded-full h-2 overflow-hidden border border-white/5">
+                  <div class="bg-gradient-to-r from-indigo-500 to-violetAccent-400 h-2 rounded-full w-[80%]"></div>
                 </div>
               </div>
 
@@ -442,13 +446,13 @@
               <div>
                 <div class="flex justify-between text-xs font-semibold mb-1.5">
                   <span class="flex items-center gap-2 text-slate-200">
-                    <i class="fa-solid fa-file-powerpoint text-teal-400"></i>
+                    <i class="fa-solid fa-file-powerpoint text-violet-400"></i>
                     <span>Executive PowerPoint & Presentation Deck Design</span>
                   </span>
-                  <span class="text-teal-400 font-mono">Advanced</span>
+                  <span class="text-violet-400 font-mono">Advanced</span>
                 </div>
-                <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
-                  <div class="bg-gradient-to-r from-tealAccent-500 to-emerald-400 h-2 rounded-full w-[90%]"></div>
+                <div class="w-full bg-slate-900 rounded-full h-2 overflow-hidden border border-white/5">
+                  <div class="bg-gradient-to-r from-violetAccent-500 to-indigo-400 h-2 rounded-full w-[90%]"></div>
                 </div>
               </div>
 
@@ -461,8 +465,8 @@
                   </span>
                   <span class="text-blue-400 font-mono">Advanced</span>
                 </div>
-                <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
-                  <div class="bg-gradient-to-r from-emerald-400 to-blue-500 h-2 rounded-full w-[88%]"></div>
+                <div class="w-full bg-slate-900 rounded-full h-2 overflow-hidden border border-white/5">
+                  <div class="bg-gradient-to-r from-indigo-400 to-blue-500 h-2 rounded-full w-[88%]"></div>
                 </div>
               </div>
             </div>
@@ -484,7 +488,7 @@
         <div class="bento-card rounded-3xl p-6 sm:p-8 lg:col-span-5 flex flex-col justify-between" data-aos="fade-up" data-aos-delay="600">
           <div>
             <div class="flex items-center gap-3 mb-6">
-              <div class="w-10 h-10 rounded-xl bg-teal-500/10 border border-teal-500/30 flex items-center justify-center text-teal-400">
+              <div class="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/30 flex items-center justify-center text-violet-400">
                 <i class="fa-solid fa-compass-drafting text-lg"></i>
               </div>
               <div>
@@ -494,8 +498,8 @@
             </div>
 
             <div class="space-y-3">
-              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5 hover:border-emerald-500/30 transition-colors flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5 hover:border-indigo-500/30 transition-colors flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400">
                   <i class="fa-solid fa-calculator text-sm"></i>
                 </div>
                 <div>
@@ -504,8 +508,8 @@
                 </div>
               </div>
 
-              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5 hover:border-emerald-500/30 transition-colors flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-teal-500/10 flex items-center justify-center text-teal-400">
+              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5 hover:border-violet-500/30 transition-colors flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-violet-500/10 flex items-center justify-center text-violet-400">
                   <i class="fa-solid fa-network-wired text-sm"></i>
                 </div>
                 <div>
@@ -514,8 +518,8 @@
                 </div>
               </div>
 
-              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5 hover:border-emerald-500/30 transition-colors flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5 hover:border-indigo-500/30 transition-colors flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400">
                   <i class="fa-solid fa-coins text-sm"></i>
                 </div>
                 <div>
@@ -538,21 +542,21 @@
     <section id="protosem" class="pt-6 pb-12 space-y-10" data-aos="fade-up">
       
       <!-- Section Intro Card -->
-      <div class="bento-card rounded-3xl p-6 sm:p-10 lg:p-12 border border-emerald-500/30 relative overflow-hidden">
+      <div class="bento-card rounded-3xl p-6 sm:p-10 lg:p-12 border border-indigo-500/30 relative overflow-hidden">
         <!-- Ambient Background Light -->
-        <div class="absolute -right-20 -top-20 w-80 h-80 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -right-20 -top-20 w-80 h-80 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-violet-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="relative z-10 space-y-8">
           
           <!-- Section Label & Programme Badge -->
           <div class="flex flex-wrap items-center justify-between gap-4">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-bold uppercase tracking-widest text-emerald-400">
-              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-xs font-bold uppercase tracking-widest text-indigo-400">
+              <span class="w-2 h-2 rounded-full bg-indigo-400 animate-pulse"></span>
               <span>PROTOSEM</span>
             </div>
             <div class="px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-slate-300 flex items-center gap-2">
-              <i class="fa-solid fa-layer-group text-emerald-400"></i>
+              <i class="fa-solid fa-layer-group text-indigo-400"></i>
               <span>One Programme • Four Phases • 20 Weeks</span>
             </div>
           </div>
@@ -565,11 +569,11 @@
                   PRICE ProtoSem
                 </h2>
                 <div class="flex flex-wrap items-center gap-2.5 mt-2">
-                  <span class="px-3 py-1 rounded-lg bg-emerald-500/20 text-emerald-300 font-semibold text-xs border border-emerald-500/30">
+                  <span class="px-3 py-1 rounded-lg bg-indigo-500/20 text-indigo-300 font-semibold text-xs border border-indigo-500/30">
                     Innovation Engineer Trainee
                   </span>
                   <span class="text-slate-500 hidden sm:inline">•</span>
-                  <span class="text-xs text-teal-300 font-medium">
+                  <span class="text-xs text-violet-300 font-medium">
                     20-Week Industry-Integrated Innovation Programme
                   </span>
                 </div>
@@ -592,39 +596,39 @@
             <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block">Programme Focus Disciplines</span>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
               
-              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5 hover:border-emerald-500/30 transition-all flex items-center gap-3 group">
-                <div class="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5 hover:border-indigo-500/30 transition-all flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:scale-110 transition-transform">
                   <i class="fa-solid fa-cart-shopping text-sm"></i>
                 </div>
-                <span class="text-xs font-bold text-slate-200 group-hover:text-emerald-300 transition-colors">Phygital Retail & Intelligent Commerce</span>
+                <span class="text-xs font-bold text-slate-200 group-hover:text-indigo-300 transition-colors">Phygital Retail & Intelligent Commerce</span>
               </div>
 
-              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5 hover:border-emerald-500/30 transition-all flex items-center gap-3 group">
-                <div class="w-9 h-9 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 group-hover:scale-110 transition-transform">
+              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5 hover:border-violet-500/30 transition-all flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 group-hover:scale-110 transition-transform">
                   <i class="fa-solid fa-brain text-sm"></i>
                 </div>
-                <span class="text-xs font-bold text-slate-200 group-hover:text-teal-300 transition-colors">AI & Analytics</span>
+                <span class="text-xs font-bold text-slate-200 group-hover:text-violet-300 transition-colors">AI & Analytics</span>
               </div>
 
-              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5 hover:border-emerald-500/30 transition-all flex items-center gap-3 group">
-                <div class="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5 hover:border-indigo-500/30 transition-all flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:scale-110 transition-transform">
                   <i class="fa-solid fa-network-wired text-sm"></i>
                 </div>
-                <span class="text-xs font-bold text-slate-200 group-hover:text-emerald-300 transition-colors">Intelligent Systems & IoT</span>
+                <span class="text-xs font-bold text-slate-200 group-hover:text-indigo-300 transition-colors">Intelligent Systems & IoT</span>
               </div>
 
-              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5 hover:border-emerald-500/30 transition-all flex items-center gap-3 group">
-                <div class="w-9 h-9 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 group-hover:scale-110 transition-transform">
+              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5 hover:border-violet-500/30 transition-all flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 group-hover:scale-110 transition-transform">
                   <i class="fa-solid fa-cubes-stacked text-sm"></i>
                 </div>
-                <span class="text-xs font-bold text-slate-200 group-hover:text-teal-300 transition-colors">Prototyping</span>
+                <span class="text-xs font-bold text-slate-200 group-hover:text-violet-300 transition-colors">Prototyping</span>
               </div>
 
-              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5 hover:border-emerald-500/30 transition-all flex items-center gap-3 group">
-                <div class="w-9 h-9 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
+              <div class="p-3.5 rounded-2xl bg-white/5 border border-white/5 hover:border-indigo-500/30 transition-all flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:scale-110 transition-transform">
                   <i class="fa-solid fa-lightbulb text-sm"></i>
                 </div>
-                <span class="text-xs font-bold text-slate-200 group-hover:text-emerald-300 transition-colors">Entrepreneurship</span>
+                <span class="text-xs font-bold text-slate-200 group-hover:text-indigo-300 transition-colors">Entrepreneurship</span>
               </div>
 
             </div>
@@ -634,7 +638,7 @@
           <div class="pt-6 border-t border-white/5 space-y-3">
             <div class="flex flex-wrap items-center justify-between text-xs text-slate-400 font-mono">
               <span class="flex items-center gap-2">
-                <i class="fa-solid fa-timeline text-emerald-400"></i>
+                <i class="fa-solid fa-timeline text-indigo-400"></i>
                 <strong class="text-slate-200 font-sans">Progression Architecture:</strong>
               </span>
               <span>20-Step Visual Journey</span>
@@ -643,35 +647,35 @@
             <!-- Milestone Progression Rail -->
             <div class="relative py-2">
               <div class="h-2 w-full bg-slate-900 rounded-full overflow-hidden border border-white/5 relative">
-                <div class="h-full bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-600 rounded-full w-full opacity-70"></div>
+                <div class="h-full bg-gradient-to-r from-indigo-500 via-violet-400 to-purple-600 rounded-full w-full opacity-75"></div>
               </div>
               <div class="grid grid-cols-4 gap-2 pt-3 text-[11px] font-mono text-slate-400">
                 <div class="flex items-center gap-1.5">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
                   <span class="font-bold text-white">01</span>
                   <span class="hidden sm:inline text-slate-500">━━━━</span>
-                  <span class="text-emerald-400">05</span>
+                  <span class="text-indigo-400">05</span>
                   <span class="text-[10px] text-slate-400 hidden md:inline">(Phase 1)</span>
                 </div>
                 <div class="flex items-center gap-1.5">
-                  <span class="w-2 h-2 rounded-full bg-teal-400"></span>
+                  <span class="w-2 h-2 rounded-full bg-violet-400"></span>
                   <span class="font-bold text-white">06</span>
                   <span class="hidden sm:inline text-slate-500">━━━━</span>
-                  <span class="text-teal-300">10</span>
+                  <span class="text-violet-300">10</span>
                   <span class="text-[10px] text-slate-400 hidden md:inline">(Phase 2)</span>
                 </div>
                 <div class="flex items-center gap-1.5">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
                   <span class="font-bold text-white">11</span>
                   <span class="hidden sm:inline text-slate-500">━━━━</span>
-                  <span class="text-emerald-400">15</span>
+                  <span class="text-indigo-400">15</span>
                   <span class="text-[10px] text-slate-400 hidden md:inline">(Phase 3)</span>
                 </div>
                 <div class="flex items-center gap-1.5">
-                  <span class="w-2 h-2 rounded-full bg-teal-400"></span>
+                  <span class="w-2 h-2 rounded-full bg-violet-400"></span>
                   <span class="font-bold text-white">16</span>
                   <span class="hidden sm:inline text-slate-500">━━━━</span>
-                  <span class="text-teal-300">20</span>
+                  <span class="text-violet-300">20</span>
                   <span class="text-[10px] text-slate-400 hidden md:inline">(Phase 4)</span>
                 </div>
               </div>
@@ -687,7 +691,7 @@
           <div>
             <h3 class="text-2xl font-heading font-extrabold text-white flex items-center gap-3">
               <span>The 20-Week Journey</span>
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono font-medium">20 Stories</span>
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-mono font-medium">20 Stories</span>
             </h3>
             <p class="text-xs sm:text-sm text-slate-400 mt-1">
               Navigate the 4 programme phases or explore individual week documentation
@@ -696,7 +700,7 @@
 
           <!-- Phase Filter Tabs -->
           <div class="flex flex-wrap p-1 rounded-2xl bg-slate-900/90 border border-white/10 text-xs font-semibold" id="phase-filter-group" role="tablist" aria-label="ProtoSem Phase Filter">
-            <button class="phase-filter-btn active-filter px-3 sm:px-4 py-2 rounded-xl transition-all bg-emerald-500 text-darkBg font-bold shadow-md shadow-emerald-500/20" data-phase="all" role="tab" aria-selected="true">
+            <button class="phase-filter-btn active-filter px-3 sm:px-4 py-2 rounded-xl transition-all bg-indigo-600 text-white font-bold shadow-md shadow-indigo-500/20" data-phase="all" role="tab" aria-selected="true">
               ALL
             </button>
             <button class="phase-filter-btn px-3 sm:px-4 py-2 rounded-xl transition-all text-slate-400 hover:text-white" data-phase="1" role="tab" aria-selected="false">
@@ -725,7 +729,7 @@
 
     <!-- ProtoSem Story Preview Modal (Future Blog Router Modal) -->
     <div id="protosem-story-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
-      <div class="bento-card rounded-3xl p-6 sm:p-8 max-w-lg w-full border border-emerald-500/30 relative shadow-2xl space-y-6">
+      <div class="bento-card rounded-3xl p-6 sm:p-8 max-w-lg w-full border border-indigo-500/30 relative shadow-2xl space-y-6">
         
         <!-- Close Button -->
         <button id="modal-close-btn" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors" aria-label="Close dialog">
@@ -733,8 +737,8 @@
         </button>
 
         <div class="space-y-4">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold border border-emerald-500/20">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-semibold border border-indigo-500/20">
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span>
             <span id="modal-phase-label">PHASE 01</span>
           </div>
 
@@ -742,13 +746,13 @@
             <h3 class="text-2xl sm:text-3xl font-heading font-extrabold text-white" id="modal-week-title">
               WEEK 01
             </h3>
-            <p class="text-xs font-mono text-emerald-400" id="modal-route-text">
+            <p class="text-xs font-mono text-indigo-400" id="modal-route-text">
               Future Route: /protosem/week-01
             </p>
           </div>
 
           <div class="p-4 rounded-2xl bg-white/5 border border-white/5 space-y-2">
-            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-teal-300">
+            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-violet-300">
               <i class="fa-solid fa-book-open"></i>
               <span>Innovation Programme Archive</span>
             </div>
@@ -758,8 +762,8 @@
           </div>
 
           <div class="pt-2 flex items-center justify-between text-xs text-slate-400 border-t border-white/5">
-            <span>Status: <strong class="text-emerald-400">Field Notes in Progress</strong></span>
-            <button id="modal-done-btn" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-darkBg font-bold text-xs transition-colors">
+            <span>Status: <strong class="text-indigo-400">Field Notes in Progress</strong></span>
+            <button id="modal-done-btn" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition-colors">
               Got It
             </button>
           </div>
@@ -770,12 +774,12 @@
 
     <!-- Section: Connect / Contact Card -->
     <section id="contact" class="py-6" data-aos="fade-up">
-      <div class="bento-card rounded-3xl p-8 sm:p-12 border border-emerald-500/30 relative overflow-hidden text-center max-w-4xl mx-auto">
-        <div class="absolute -left-12 -top-12 w-48 h-48 bg-emerald-500/20 rounded-full blur-3xl"></div>
-        <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-teal-500/20 rounded-full blur-3xl"></div>
+      <div class="bento-card rounded-3xl p-8 sm:p-12 border border-indigo-500/30 relative overflow-hidden text-center max-w-4xl mx-auto">
+        <div class="absolute -left-12 -top-12 w-48 h-48 bg-indigo-500/20 rounded-full blur-3xl"></div>
+        <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-violet-500/20 rounded-full blur-3xl"></div>
 
         <div class="relative z-10 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold border border-emerald-500/20">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-semibold border border-indigo-500/20">
             <i class="fa-solid fa-paper-plane"></i>
             <span>Let's Build Together</span>
           </div>
@@ -789,7 +793,7 @@
           </p>
 
           <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
-            <a href="mailto:ea.akshaya@gmail.com" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-primary-500 to-tealAccent-500 text-darkBg font-bold text-sm hover:opacity-90 transition-all flex items-center gap-2 shadow-lg shadow-emerald-500/20">
+            <a href="mailto:ea.akshaya@gmail.com" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-primary-500 via-indigo-600 to-violetAccent-500 text-white font-bold text-sm hover:opacity-95 transition-all flex items-center gap-2 shadow-lg shadow-indigo-500/25">
               <i class="fa-solid fa-envelope"></i>
               <span>ea.akshaya@gmail.com</span>
             </a>
@@ -799,7 +803,7 @@
               <span>Connect on LinkedIn</span>
             </a>
 
-            <a href="resume.html" target="_blank" class="px-6 py-3.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 font-semibold text-sm border border-emerald-500/30 transition-all flex items-center gap-2">
+            <a href="resume.html" target="_blank" class="px-6 py-3.5 rounded-xl bg-indigo-500/10 hover:bg-indigo-500/20 text-indigo-300 font-semibold text-sm border border-indigo-500/30 transition-all flex items-center gap-2">
               <i class="fa-solid fa-file-arrow-down"></i>
               <span>Print ATS Resume</span>
             </a>
@@ -815,9 +819,9 @@
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <p>© 2026 Akshaya Elango. Built with Tailwind CSS & Bento Grid Aesthetics.</p>
       <div class="flex items-center gap-6">
-        <a href="https://github.com/akshaya118-jpg" class="hover:text-emerald-400 transition-colors">GitHub</a>
-        <a href="https://www.linkedin.com/in/akshaya-elango-b991a137b" class="hover:text-emerald-400 transition-colors">LinkedIn</a>
-        <a href="resume.html" class="hover:text-emerald-400 transition-colors">Resume</a>
+        <a href="https://github.com/akshaya118-jpg" class="hover:text-indigo-400 transition-colors">GitHub</a>
+        <a href="https://www.linkedin.com/in/akshaya-elango-b991a137b" class="hover:text-indigo-400 transition-colors">LinkedIn</a>
+        <a href="resume.html" class="hover:text-indigo-400 transition-colors">Resume</a>
       </div>
     </div>
   </footer>
@@ -916,7 +920,7 @@
         phaseBlock.innerHTML = `
           <div class="flex items-center justify-between border-b border-white/5 pb-3">
             <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 font-bold text-xs">
+              <div class="w-8 h-8 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 font-bold text-xs">
                 0${phaseNum}
               </div>
               <div>
@@ -945,22 +949,22 @@
           card.innerHTML = `
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono uppercase tracking-wider text-emerald-400/90 font-semibold bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-indigo-400/90 font-semibold bg-indigo-500/10 px-2 py-0.5 rounded-md border border-indigo-500/20">
                   ${item.phaseLabel}
                 </span>
-                <span class="w-2 h-2 rounded-full bg-emerald-400/50 group-hover:bg-emerald-400 group-hover:scale-125 transition-all"></span>
+                <span class="w-2 h-2 rounded-full bg-indigo-400/50 group-hover:bg-indigo-400 group-hover:scale-125 transition-all"></span>
               </div>
-              <h5 class="text-xl sm:text-2xl font-heading font-extrabold text-white group-hover:text-emerald-300 transition-colors">
+              <h5 class="text-xl sm:text-2xl font-heading font-extrabold text-white group-hover:text-indigo-300 transition-colors">
                 ${item.weekLabel}
               </h5>
             </div>
 
             <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-[11px]">
               <span class="flex items-center gap-1.5 text-slate-400 group-hover:text-slate-200 transition-colors">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span>
                 <span>${item.status}</span>
               </span>
-              <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-emerald-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
+              <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-indigo-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
             </div>
           `;
 
@@ -1019,11 +1023,11 @@
     filterButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         filterButtons.forEach(b => {
-          b.classList.remove('bg-emerald-500', 'text-darkBg', 'font-bold', 'shadow-md', 'shadow-emerald-500/20');
+          b.classList.remove('bg-indigo-600', 'text-white', 'font-bold', 'shadow-md', 'shadow-indigo-500/20');
           b.classList.add('text-slate-400');
           b.setAttribute('aria-selected', 'false');
         });
-        btn.classList.add('bg-emerald-500', 'text-darkBg', 'font-bold', 'shadow-md', 'shadow-emerald-500/20');
+        btn.classList.add('bg-indigo-600', 'text-white', 'font-bold', 'shadow-md', 'shadow-indigo-500/20');
         btn.classList.remove('text-slate-400');
         btn.setAttribute('aria-selected', 'true');
 
