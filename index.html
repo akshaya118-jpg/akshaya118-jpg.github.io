@@ -557,7 +557,7 @@
             </div>
             <div class="px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-slate-300 flex items-center gap-2">
               <i class="fa-solid fa-layer-group text-indigo-400"></i>
-              <span>One Programme • Four Phases • 20 Weeks</span>
+              <span>One Programme • Four Phases • Weeks 00–20</span>
             </div>
           </div>
 
@@ -641,10 +641,10 @@
                 <i class="fa-solid fa-timeline text-indigo-400"></i>
                 <strong class="text-slate-200 font-sans">Progression Architecture:</strong>
               </span>
-              <span>20-Step Visual Journey</span>
+              <span>21-Step Journey (Weeks 00–20)</span>
             </div>
 
-            <!-- Milestone Progression Rail -->
+            <!-- Milestone Progression Rail: 00 ━━━━ 05 ━━━━ 10 ━━━━ 15 ━━━━ 20 -->
             <div class="relative py-2">
               <div class="h-2 w-full bg-slate-900 rounded-full overflow-hidden border border-white/5 relative">
                 <div class="h-full bg-gradient-to-r from-indigo-500 via-violet-400 to-purple-600 rounded-full w-full opacity-75"></div>
@@ -652,7 +652,7 @@
               <div class="grid grid-cols-4 gap-2 pt-3 text-[11px] font-mono text-slate-400">
                 <div class="flex items-center gap-1.5">
                   <span class="w-2 h-2 rounded-full bg-indigo-400"></span>
-                  <span class="font-bold text-white">01</span>
+                  <span class="font-bold text-white">00</span>
                   <span class="hidden sm:inline text-slate-500">━━━━</span>
                   <span class="text-indigo-400">05</span>
                   <span class="text-[10px] text-slate-400 hidden md:inline">(Phase 1)</span>
@@ -690,8 +690,8 @@
         <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div>
             <h3 class="text-2xl font-heading font-extrabold text-white flex items-center gap-3">
-              <span>The 20-Week Journey</span>
-              <span class="text-xs px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-mono font-medium">20 Stories</span>
+              <span>The Innovation Journey</span>
+              <span class="text-xs px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 font-mono font-medium">21 Chapters</span>
             </h3>
             <p class="text-xs sm:text-sm text-slate-400 mt-1">
               Navigate the 4 programme phases or explore individual week documentation
@@ -704,16 +704,16 @@
               ALL
             </button>
             <button class="phase-filter-btn px-3 sm:px-4 py-2 rounded-xl transition-all text-slate-400 hover:text-white" data-phase="1" role="tab" aria-selected="false">
-              PHASE 01
+              PHASE 01 (W00–05)
             </button>
             <button class="phase-filter-btn px-3 sm:px-4 py-2 rounded-xl transition-all text-slate-400 hover:text-white" data-phase="2" role="tab" aria-selected="false">
-              PHASE 02
+              PHASE 02 (W06–10)
             </button>
             <button class="phase-filter-btn px-3 sm:px-4 py-2 rounded-xl transition-all text-slate-400 hover:text-white" data-phase="3" role="tab" aria-selected="false">
-              PHASE 03
+              PHASE 03 (W11–15)
             </button>
             <button class="phase-filter-btn px-3 sm:px-4 py-2 rounded-xl transition-all text-slate-400 hover:text-white" data-phase="4" role="tab" aria-selected="false">
-              PHASE 04
+              PHASE 04 (W16–20)
             </button>
           </div>
         </div>
@@ -863,10 +863,11 @@
     });
 
     /* ==========================================================================
-       PRICE PROTOSEM: Reusable Data-Driven 20-Week Engine
+       PRICE PROTOSEM: Reusable Data-Driven 21-Chapter Engine (Weeks 00–20)
        ========================================================================== */
     const protoSemWeeks = [
-      // Phase 01: Weeks 01–05
+      // Phase 01: Weeks 00–05
+      { week: 0, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 00", status: "FIELD NOTES IN PROGRESS", slug: "week-00" },
       { week: 1, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 01", status: "FIELD NOTES IN PROGRESS", slug: "week-01" },
       { week: 2, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 02", status: "FIELD NOTES IN PROGRESS", slug: "week-02" },
       { week: 3, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 03", status: "FIELD NOTES IN PROGRESS", slug: "week-03" },
@@ -896,7 +897,7 @@
     ];
 
     const phasesMetadata = {
-      1: { name: "PHASE 01", span: "Weeks 01–05", tag: "Discovery & Ideation" },
+      1: { name: "PHASE 01", span: "Weeks 00–05", tag: "Orientation, Problem Discovery & Ideation" },
       2: { name: "PHASE 02", span: "Weeks 06–10", tag: "Intelligence & Systems" },
       3: { name: "PHASE 03", span: "Weeks 11–15", tag: "Prototyping & Pilot" },
       4: { name: "PHASE 04", span: "Weeks 16–20", tag: "Validation & Commercialization" }
@@ -916,6 +917,10 @@
         const phaseBlock = document.createElement('div');
         phaseBlock.className = 'space-y-4';
 
+        const gridColsClass = phaseWeeks.length === 6 
+          ? 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5' 
+          : 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3.5';
+
         // Phase Sub-Header
         phaseBlock.innerHTML = `
           <div class="flex items-center justify-between border-b border-white/5 pb-3">
@@ -932,7 +937,7 @@
               ${phaseWeeks.length} Chapters
             </span>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5" id="phase-${phaseNum}-grid">
+          <div class="${gridColsClass}" id="phase-${phaseNum}-grid">
           </div>
         `;
 
