@@ -727,46 +727,39 @@
 
     </section>
 
-    <!-- ProtoSem Story Preview Modal (Future Blog Router Modal) -->
-    <div id="protosem-story-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4">
-      <div class="bento-card rounded-3xl p-6 sm:p-8 max-w-lg w-full border border-indigo-500/30 relative shadow-2xl space-y-6">
+    <!-- ProtoSem Story & Article Reader Modal -->
+    <div id="protosem-story-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4 sm:p-6">
+      <div class="bento-card rounded-3xl p-6 sm:p-8 lg:p-10 max-w-3xl w-full border border-indigo-500/30 relative shadow-2xl space-y-6 max-h-[88vh] flex flex-col">
         
-        <!-- Close Button -->
-        <button id="modal-close-btn" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors" aria-label="Close dialog">
-          <i class="fa-solid fa-xmark text-sm"></i>
-        </button>
-
-        <div class="space-y-4">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-semibold border border-indigo-500/20">
-            <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span>
-            <span id="modal-phase-label">PHASE 01</span>
-          </div>
-
-          <div class="space-y-1">
-            <h3 class="text-2xl sm:text-3xl font-heading font-extrabold text-white" id="modal-week-title">
-              WEEK 01
-            </h3>
-            <p class="text-xs font-mono text-indigo-400" id="modal-route-text">
-              Future Route: /protosem/week-01
-            </p>
-          </div>
-
-          <div class="p-4 rounded-2xl bg-white/5 border border-white/5 space-y-2">
-            <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-violet-300">
-              <i class="fa-solid fa-book-open"></i>
-              <span>Innovation Programme Archive</span>
+        <!-- Modal Top Action Header -->
+        <div class="flex items-center justify-between pb-4 border-b border-white/5 shrink-0">
+          <div class="flex items-center gap-2">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-semibold border border-indigo-500/20">
+              <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span>
+              <span id="modal-phase-label">PHASE 01</span>
             </div>
-            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-              Field notes, prototyping documentation, and chapter stories for this week are currently in preparation as part of the PRICE ProtoSem innovation programme.
-            </p>
+            <span class="text-xs font-mono text-slate-500 hidden sm:inline" id="modal-route-text">/protosem/week-00</span>
           </div>
 
-          <div class="pt-2 flex items-center justify-between text-xs text-slate-400 border-t border-white/5">
-            <span>Status: <strong class="text-indigo-400">Field Notes in Progress</strong></span>
-            <button id="modal-done-btn" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition-colors">
-              Got It
-            </button>
+          <button id="modal-close-btn" class="w-9 h-9 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors" aria-label="Close story reader">
+            <i class="fa-solid fa-xmark text-sm"></i>
+          </button>
+        </div>
+
+        <!-- Scrollable Modal Story Content Container -->
+        <div id="modal-dynamic-body" class="overflow-y-auto pr-2 space-y-6 text-slate-300 text-sm leading-relaxed" style="scrollbar-width: thin;">
+          <!-- Dynamically injected via JavaScript -->
+        </div>
+
+        <!-- Modal Footer -->
+        <div class="pt-4 border-t border-white/5 flex items-center justify-between text-xs text-slate-400 shrink-0">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-award text-indigo-400"></i>
+            <span>PRICE ProtoSem • Forge Innovation & Ventures</span>
           </div>
+          <button id="modal-done-btn" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs transition-colors shadow-md shadow-indigo-500/20">
+            Close Reader
+          </button>
         </div>
 
       </div>
@@ -867,33 +860,33 @@
        ========================================================================== */
     const protoSemWeeks = [
       // Phase 01: Weeks 00–05
-      { week: 0, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 00", status: "FIELD NOTES IN PROGRESS", slug: "week-00" },
-      { week: 1, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 01", status: "FIELD NOTES IN PROGRESS", slug: "week-01" },
-      { week: 2, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 02", status: "FIELD NOTES IN PROGRESS", slug: "week-02" },
-      { week: 3, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 03", status: "FIELD NOTES IN PROGRESS", slug: "week-03" },
-      { week: 4, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 04", status: "FIELD NOTES IN PROGRESS", slug: "week-04" },
-      { week: 5, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 05", status: "FIELD NOTES IN PROGRESS", slug: "week-05" },
+      { week: 0, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 00", status: "FIELD NOTES AVAILABLE", slug: "week-00", isPublished: true },
+      { week: 1, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 01", status: "FIELD NOTES IN PROGRESS", slug: "week-01", isPublished: false },
+      { week: 2, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 02", status: "FIELD NOTES IN PROGRESS", slug: "week-02", isPublished: false },
+      { week: 3, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 03", status: "FIELD NOTES IN PROGRESS", slug: "week-03", isPublished: false },
+      { week: 4, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 04", status: "FIELD NOTES IN PROGRESS", slug: "week-04", isPublished: false },
+      { week: 5, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 05", status: "FIELD NOTES IN PROGRESS", slug: "week-05", isPublished: false },
 
       // Phase 02: Weeks 06–10
-      { week: 6, phase: 2, phaseLabel: "Phase 02", weekLabel: "WEEK 06", status: "FIELD NOTES IN PROGRESS", slug: "week-06" },
-      { week: 7, phase: 2, phaseLabel: "Phase 02", weekLabel: "WEEK 07", status: "FIELD NOTES IN PROGRESS", slug: "week-07" },
-      { week: 8, phase: 2, phaseLabel: "Phase 02", weekLabel: "WEEK 08", status: "FIELD NOTES IN PROGRESS", slug: "week-08" },
-      { week: 9, phase: 2, phaseLabel: "Phase 02", weekLabel: "WEEK 09", status: "FIELD NOTES IN PROGRESS", slug: "week-09" },
-      { week: 10, phase: 2, phaseLabel: "Phase 02", weekLabel: "WEEK 10", status: "FIELD NOTES IN PROGRESS", slug: "week-10" },
+      { week: 6, phase: 2, phaseLabel: "Phase 02", weekLabel: "WEEK 06", status: "FIELD NOTES IN PROGRESS", slug: "week-06", isPublished: false },
+      { week: 7, phase: 2, phaseLabel: "Phase 02", weekLabel: "WEEK 07", status: "FIELD NOTES IN PROGRESS", slug: "week-07", isPublished: false },
+      { week: 8, phase: 2, phaseLabel: "Phase 02", weekLabel: "WEEK 08", status: "FIELD NOTES IN PROGRESS", slug: "week-08", isPublished: false },
+      { week: 9, phase: 2, phaseLabel: "Phase 02", weekLabel: "WEEK 09", status: "FIELD NOTES IN PROGRESS", slug: "week-09", isPublished: false },
+      { week: 10, phase: 2, phaseLabel: "Phase 02", weekLabel: "WEEK 10", status: "FIELD NOTES IN PROGRESS", slug: "week-10", isPublished: false },
 
       // Phase 03: Weeks 11–15
-      { week: 11, phase: 3, phaseLabel: "Phase 03", weekLabel: "WEEK 11", status: "FIELD NOTES IN PROGRESS", slug: "week-11" },
-      { week: 12, phase: 3, phaseLabel: "Phase 03", weekLabel: "WEEK 12", status: "FIELD NOTES IN PROGRESS", slug: "week-12" },
-      { week: 13, phase: 3, phaseLabel: "Phase 03", weekLabel: "WEEK 13", status: "FIELD NOTES IN PROGRESS", slug: "week-13" },
-      { week: 14, phase: 3, phaseLabel: "Phase 03", weekLabel: "WEEK 14", status: "FIELD NOTES IN PROGRESS", slug: "week-14" },
-      { week: 15, phase: 3, phaseLabel: "Phase 03", weekLabel: "WEEK 15", status: "FIELD NOTES IN PROGRESS", slug: "week-15" },
+      { week: 11, phase: 3, phaseLabel: "Phase 03", weekLabel: "WEEK 11", status: "FIELD NOTES IN PROGRESS", slug: "week-11", isPublished: false },
+      { week: 12, phase: 3, phaseLabel: "Phase 03", weekLabel: "WEEK 12", status: "FIELD NOTES IN PROGRESS", slug: "week-12", isPublished: false },
+      { week: 13, phase: 3, phaseLabel: "Phase 03", weekLabel: "WEEK 13", status: "FIELD NOTES IN PROGRESS", slug: "week-13", isPublished: false },
+      { week: 14, phase: 3, phaseLabel: "Phase 03", weekLabel: "WEEK 14", status: "FIELD NOTES IN PROGRESS", slug: "week-14", isPublished: false },
+      { week: 15, phase: 3, phaseLabel: "Phase 03", weekLabel: "WEEK 15", status: "FIELD NOTES IN PROGRESS", slug: "week-15", isPublished: false },
 
       // Phase 04: Weeks 16–20
-      { week: 16, phase: 4, phaseLabel: "Phase 04", weekLabel: "WEEK 16", status: "FIELD NOTES IN PROGRESS", slug: "week-16" },
-      { week: 17, phase: 4, phaseLabel: "Phase 04", weekLabel: "WEEK 17", status: "FIELD NOTES IN PROGRESS", slug: "week-17" },
-      { week: 18, phase: 4, phaseLabel: "Phase 04", weekLabel: "WEEK 18", status: "FIELD NOTES IN PROGRESS", slug: "week-18" },
-      { week: 19, phase: 4, phaseLabel: "Phase 04", weekLabel: "WEEK 19", status: "FIELD NOTES IN PROGRESS", slug: "week-19" },
-      { week: 20, phase: 4, phaseLabel: "Phase 04", weekLabel: "WEEK 20", status: "FIELD NOTES IN PROGRESS", slug: "week-20" }
+      { week: 16, phase: 4, phaseLabel: "Phase 04", weekLabel: "WEEK 16", status: "FIELD NOTES IN PROGRESS", slug: "week-16", isPublished: false },
+      { week: 17, phase: 4, phaseLabel: "Phase 04", weekLabel: "WEEK 17", status: "FIELD NOTES IN PROGRESS", slug: "week-17", isPublished: false },
+      { week: 18, phase: 4, phaseLabel: "Phase 04", weekLabel: "WEEK 18", status: "FIELD NOTES IN PROGRESS", slug: "week-18", isPublished: false },
+      { week: 19, phase: 4, phaseLabel: "Phase 04", weekLabel: "WEEK 19", status: "FIELD NOTES IN PROGRESS", slug: "week-19", isPublished: false },
+      { week: 20, phase: 4, phaseLabel: "Phase 04", weekLabel: "WEEK 20", status: "FIELD NOTES IN PROGRESS", slug: "week-20", isPublished: false }
     ];
 
     const phasesMetadata = {
@@ -901,6 +894,129 @@
       2: { name: "PHASE 02", span: "Weeks 06–10", tag: "Intelligence & Systems" },
       3: { name: "PHASE 03", span: "Weeks 11–15", tag: "Prototyping & Pilot" },
       4: { name: "PHASE 04", span: "Weeks 16–20", tag: "Validation & Commercialization" }
+    };
+
+    // Full Week 00 Reflection Story Content
+    const weekZeroContent = {
+      title: "Week 00: Mindsets, Team Dynamics & Strategic Horizons",
+      subtitle: "The Inaugural Fellowship Sprint at Forge Innovation & Ventures",
+      readTime: "4 min read",
+      date: "Fellowship Induction",
+      bodyHtml: `
+        <div class="space-y-6">
+          
+          <div class="border-b border-white/5 pb-4">
+            <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-white leading-snug">
+              Week 00: Mindsets, Team Dynamics & Strategic Horizons
+            </h2>
+            <p class="text-sm text-indigo-400 font-medium mt-1">
+              The Inaugural Fellowship Sprint at Forge Innovation & Ventures
+            </p>
+            <div class="flex items-center gap-4 text-xs text-slate-400 mt-3 font-mono">
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-calendar-day text-indigo-400"></i> Induction Week</span>
+              <span>•</span>
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-clock text-violet-400"></i> ~560 Words</span>
+              <span>•</span>
+              <span class="text-emerald-400 font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Full Reflection</span>
+            </div>
+          </div>
+
+          <!-- Section 1 -->
+          <div class="space-y-2">
+            <h3 class="text-base sm:text-lg font-heading font-bold text-white flex items-center gap-2">
+              <span class="text-indigo-400 text-sm font-mono">01.</span>
+              <span>Stepping into the Unfamiliar Orbit</span>
+            </h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Walking into Forge Innovation & Ventures for the start of the PRICE ProtoSem fellowship brought that familiar mix of intense curiosity and quiet hesitation. Surrounded by a cohort from varied academic disciplines and technical backgrounds, the initial room felt guarded. However, through structured icebreakers and fast-paced team activities, the barriers dissolved quickly. I realized early on that solving complex problems requires communicating seamlessly with people who think and approach challenges from completely different angles than my own.
+            </p>
+          </div>
+
+          <!-- Section 2 -->
+          <div class="space-y-2">
+            <h3 class="text-base sm:text-lg font-heading font-bold text-white flex items-center gap-2">
+              <span class="text-indigo-400 text-sm font-mono">02.</span>
+              <span>Re-engineering Professional Presence</span>
+            </h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              One of the standout sessions in our opening days focused on professional identity and digital presence. Rather than treating platforms like LinkedIn as passive repositories for completed coursework or static digital resumes, the session challenged us to view our profiles as active, evolving narratives. It pushed me to articulate not just what I have done, but why I care about supply chains, commerce operations, and technology, and how I intend to create measurable value.
+            </p>
+          </div>
+
+          <!-- Section 3 -->
+          <div class="space-y-2">
+            <h3 class="text-base sm:text-lg font-heading font-bold text-white flex items-center gap-2">
+              <span class="text-indigo-400 text-sm font-mono">03.</span>
+              <span>Diagnostics, Strengths, and Team Dynamics</span>
+            </h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Through comprehensive work-style and personality assessments, I gained a much clearer mirror into how I operate under pressure and within groups. The diagnostic highlighted my natural strengths in structured analysis and execution, while pinpointing areas where I need to practice deeper active listening and flexibility. Understanding these personal tendencies upfront is invaluable—it equips me to collaborate with higher empathy and minimize operational friction before deep project sprints begin.
+            </p>
+          </div>
+
+          <!-- Section 4 -->
+          <div class="space-y-2">
+            <h3 class="text-base sm:text-lg font-heading font-bold text-white flex items-center gap-2">
+              <span class="text-indigo-400 text-sm font-mono">04.</span>
+              <span>Distilling Complexity Through Storytelling</span>
+            </h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              During a creative storytelling module inspired by Zen Pencils, we explored how high-level abstractions and technical depth often fall flat without an engaging human narrative. We practiced breaking down multi-layered ideas into concise, visual story arcs. This reinforced a critical lesson for my innovation journey: an idea is only as powerful as your ability to make someone else understand, care about, and back it.
+            </p>
+          </div>
+
+          <!-- Section 5 -->
+          <div class="space-y-2">
+            <h3 class="text-base sm:text-lg font-heading font-bold text-white flex items-center gap-2">
+              <span class="text-indigo-400 text-sm font-mono">05.</span>
+              <span>Prototyping Over Planning: The Marshmallow Reality Check</span>
+            </h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              The hands-on Marshmallow Challenge was a sharp reminder of the perils of analysis paralysis. As teams, we were tempted to spend the majority of our allotted time architecting the "perfect" structural plan on paper, only to watch delicate spaghetti towers collapse under the weight of the marshmallow at the final second. The exercise drove home an essential product philosophy: build to think, test early, fail cheaply, and iterate rapidly rather than clinging to theoretical assumptions.
+            </p>
+          </div>
+
+          <!-- Section 6: Keynote Address & Required Image Placeholder -->
+          <div class="space-y-3 pt-2">
+            <h3 class="text-base sm:text-lg font-heading font-bold text-white flex items-center gap-2">
+              <span class="text-indigo-400 text-sm font-mono">06.</span>
+              <span>Industry Realities: Keynote with Mr. Kumar Rajagopalan</span>
+            </h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              The defining highlight of our orientation was the inaugural address delivered by Mr. Kumar Rajagopalan, CEO of the Retailers Association of India (RAI).
+            </p>
+
+            <!-- Exact Required Image Placeholder -->
+            <div class="my-4 rounded-2xl bg-slate-900/90 border border-dashed border-indigo-500/40 p-6 sm:p-8 text-center space-y-2 group hover:border-indigo-400 transition-colors">
+              <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mx-auto text-xl group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-image"></i>
+              </div>
+              <div class="font-mono text-xs sm:text-sm text-indigo-300 font-bold tracking-wider">
+                [WEEK_00_KEYNOTE_IMAGE]
+              </div>
+              <p class="text-[11px] sm:text-xs text-slate-400 italic max-w-md mx-auto">
+                Inaugural address by Mr. Kumar Rajagopalan, CEO, Retailers Association of India (RAI)
+              </p>
+            </div>
+
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Mr. Rajagopalan grounded our upcoming mission in the shifting realities of modern retail. He spoke candidly about rapid shifts in consumer habits, omnichannel convergence, and the urgent imperative for retail organizations to remain hyper-agile. Hearing directly from industry leadership underscored that our focus throughout ProtoSem isn't theoretical—it is about designing intelligent, validated solutions that withstand real market friction.
+            </p>
+          </div>
+
+          <!-- Section 7 -->
+          <div class="space-y-2 pt-2 border-t border-white/5">
+            <h3 class="text-base sm:text-lg font-heading font-bold text-white flex items-center gap-2">
+              <span class="text-indigo-400 text-sm font-mono">07.</span>
+              <span>Laying the Foundation for the Sprint Ahead</span>
+            </h3>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+              Week 00 was deliberately designed around mindset calibration, self-awareness, cross-functional trust, and strategic alignment rather than technical coursework. It reframed my perspective on how real innovation happens. I am stepping out of this orientation energized, clear on my personal goals, and excited to dive into the 20-week journey ahead.
+            </p>
+          </div>
+
+        </div>
+      `
     };
 
     function renderProtoSem(filterPhase = 'all') {
@@ -949,15 +1065,27 @@
           card.dataset.week = item.week;
           card.dataset.slug = item.slug;
           card.dataset.phase = item.phase;
-          card.className = 'protosem-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between group cursor-pointer relative overflow-hidden text-left no-underline block';
+          
+          const isAvailable = item.isPublished;
+          const cardBorder = isAvailable 
+            ? 'border-indigo-500/40 bg-indigo-950/20 shadow-lg shadow-indigo-500/10 hover:border-indigo-400' 
+            : 'border-white/5';
+          const beaconClass = isAvailable 
+            ? 'bg-emerald-400 shadow-sm shadow-emerald-400/50' 
+            : 'bg-indigo-400/50 group-hover:bg-indigo-400';
+          const statusTextClass = isAvailable 
+            ? 'text-emerald-400 font-semibold' 
+            : 'text-slate-400 group-hover:text-slate-200';
+
+          card.className = `protosem-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between group cursor-pointer relative overflow-hidden text-left no-underline block ${cardBorder}`;
           
           card.innerHTML = `
             <div>
               <div class="flex items-center justify-between mb-3">
-                <span class="text-[10px] font-mono uppercase tracking-wider text-indigo-400/90 font-semibold bg-indigo-500/10 px-2 py-0.5 rounded-md border border-indigo-500/20">
+                <span class="text-[10px] font-mono uppercase tracking-wider text-indigo-400 font-semibold bg-indigo-500/10 px-2 py-0.5 rounded-md border border-indigo-500/20">
                   ${item.phaseLabel}
                 </span>
-                <span class="w-2 h-2 rounded-full bg-indigo-400/50 group-hover:bg-indigo-400 group-hover:scale-125 transition-all"></span>
+                <span class="w-2 h-2 rounded-full ${beaconClass} group-hover:scale-125 transition-all"></span>
               </div>
               <h5 class="text-xl sm:text-2xl font-heading font-extrabold text-white group-hover:text-indigo-300 transition-colors">
                 ${item.weekLabel}
@@ -965,8 +1093,8 @@
             </div>
 
             <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-[11px]">
-              <span class="flex items-center gap-1.5 text-slate-400 group-hover:text-slate-200 transition-colors">
-                <span class="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse"></span>
+              <span class="flex items-center gap-1.5 ${statusTextClass} transition-colors">
+                <span class="w-1.5 h-1.5 rounded-full ${isAvailable ? 'bg-emerald-400 animate-ping' : 'bg-indigo-400 animate-pulse'}"></span>
                 <span>${item.status}</span>
               </span>
               <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-indigo-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"></i>
@@ -985,19 +1113,53 @@
       });
     }
 
-    // Modal Interaction
+    // Modal Story Reader Logic
     const modal = document.getElementById('protosem-story-modal');
     const modalPhase = document.getElementById('modal-phase-label');
-    const modalWeekTitle = document.getElementById('modal-week-title');
     const modalRoute = document.getElementById('modal-route-text');
+    const modalBody = document.getElementById('modal-dynamic-body');
     const modalCloseBtn = document.getElementById('modal-close-btn');
     const modalDoneBtn = document.getElementById('modal-done-btn');
 
     function openProtoSemModal(item) {
-      if (!modal) return;
-      modalPhase.textContent = `${item.phaseLabel} • ${phasesMetadata[item.phase].tag}`;
-      modalWeekTitle.textContent = item.weekLabel;
-      modalRoute.textContent = `Future Route: /protosem/${item.slug}`;
+      if (!modal || !modalBody) return;
+      modalPhase.textContent = `${item.phaseLabel} • ${phasesMetadata[item.phase].name}`;
+      modalRoute.textContent = `/protosem/${item.slug}`;
+
+      if (item.week === 0) {
+        // Render Full Week 00 Reflection Article
+        modalBody.innerHTML = weekZeroContent.bodyHtml;
+      } else {
+        // Render Standard Future Placeholder
+        modalBody.innerHTML = `
+          <div class="space-y-5 py-4">
+            <div class="space-y-1">
+              <h3 class="text-2xl sm:text-3xl font-heading font-extrabold text-white">
+                ${item.weekLabel}
+              </h3>
+              <p class="text-xs font-mono text-indigo-400">
+                Future Route: /protosem/${item.slug}
+              </p>
+            </div>
+
+            <div class="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/5 space-y-2">
+              <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-violet-300">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Innovation Programme Archive</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Field notes, prototyping documentation, and chapter stories for this week are currently in preparation as part of the PRICE ProtoSem innovation programme.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-xs text-indigo-300 flex items-center gap-2">
+              <i class="fa-solid fa-circle-info"></i>
+              <span>Full technical log will be unlocked as this milestone is completed.</span>
+            </div>
+          </div>
+        `;
+      }
+
       modal.classList.remove('hidden');
       modal.classList.add('flex');
       document.body.style.overflow = 'hidden';
