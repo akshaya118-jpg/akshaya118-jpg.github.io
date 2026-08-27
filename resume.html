@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akshaya Elango - Resume (ATS-Optimized)</title>
+  <meta name="description" content="Official ATS-friendly Resume of Akshaya Elango - BBA, Logistics, Supply Chain Management, and Finance.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    /* CSS Reset & Base ATS Styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1a1a1a;
+      background-color: #f3f4f6;
+      line-height: 1.5;
+      font-size: 11pt;
+    }
+
+    /* Screen Container */
+    .screen-toolbar {
+      background: #111827;
+      color: #ffffff;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 13px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+    .btn-primary {
+      background-color: #10b981;
+      color: #090d16;
+    }
+    .btn-primary:hover {
+      background-color: #059669;
+      color: #ffffff;
+    }
+    .btn-secondary {
+      background-color: rgba(255, 255, 255, 0.1);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .btn-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .resume-wrapper {
+      max-width: 800px;
+      margin: 30px auto 50px auto;
+      background: #ffffff;
+      padding: 40px 48px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      border-radius: 4px;
+    }
+
+    /* ATS Document Hierarchy */
+    .resume-header {
+      border-bottom: 2px solid #10b981;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    h1.candidate-name {
+      font-size: 24pt;
+      font-weight: 800;
+      color: #111827;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .candidate-title {
+      font-size: 12pt;
+      font-weight: 600;
+      color: #059669;
+      margin-bottom: 8px;
+    }
+
+    .contact-line {
+      font-size: 9.5pt;
+      color: #4b5563;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .contact-line a {
+      color: #1f2937;
+      text-decoration: none;
+    }
+    .contact-line a:hover {
+      color: #10b981;
+      text-decoration: underline;
+    }
+
+    /* Sections */
+    section.resume-section {
+      margin-bottom: 20px;
+    }
+
+    h2.section-heading {
+      font-size: 12pt;
+      font-weight: 700;
+      color: #111827;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    p.summary-text {
+      color: #374151;
+      font-size: 10pt;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    /* Entry Layout */
+    .entry {
+      margin-bottom: 14px;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+
+    .entry-title {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    .entry-subtitle {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #4b5563;
+    }
+
+    .entry-date {
+      font-size: 9.5pt;
+      font-weight: 500;
+      color: #6b7280;
+    }
+
+    ul.bullet-list {
+      margin-left: 18px;
+      margin-top: 4px;
+      color: #374151;
+      font-size: 10pt;
+    }
+
+    ul.bullet-list li {
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+
+    /* Skills Grid for Clean Parsing */
+    .skills-category {
+      margin-bottom: 8px;
+      font-size: 10pt;
+      color: #374151;
+    }
+
+    .skills-label {
+      font-weight: 700;
+      color: #111827;
+      display: inline-block;
+      min-width: 140px;
+    }
+
+    /* Required ATS Print Styling */
+    @media print {
+      @page {
+        margin: 15mm;
+        size: A4;
+      }
+      
+      header, footer, .screen-toolbar {
+        display: none !important;
+      }
+
+      body {
+        background-color: #ffffff !important;
+        font-size: 10pt;
+      }
+
+      .resume-wrapper {
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+      }
+
+      .resume-header {
+        border-bottom: 2px solid #000000;
+      }
+
+      h2.section-heading {
+        border-bottom: 1px solid #9ca3af;
+      }
+
+      a {
+        text-decoration: none;
+        color: #000000 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Screen Toolbar for easy preview & printing -->
+  <div class="screen-toolbar">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <a href="index.html" class="btn btn-secondary">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span>Back to Interactive Portfolio</span>
+      </a>
+      <span style="font-size: 12px; color: #9ca3af; border-left: 1px solid #374151; padding-left: 12px;">ATS Standard Compliant</span>
+    </div>
+    <div style="display: flex; gap: 10px;">
+      <button onclick="window.print()" class="btn btn-primary">
+        <i class="fa-solid fa-print"></i>
+        <span>Print to PDF / Download</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Resume Content (Parsed by ATS Bots) -->
+  <main class="resume-wrapper">
+
+    <!-- Header Section -->
+    <header class="resume-header">
+      <h1 class="candidate-name">Akshaya Elango</h1>
+      <div class="candidate-title">Business Administration • Logistics & Supply Chain Management • Finance</div>
+      <div class="contact-line">
+        <span><i class="fa-solid fa-envelope"></i> <a href="mailto:ea.akshaya@gmail.com">ea.akshaya@gmail.com</a></span>
+        <span>•</span>
+        <span><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/akshaya-elango-b991a137b">linkedin.com/in/akshaya-elango</a></span>
+        <span>•</span>
+        <span><i class="fa-brands fa-github"></i> <a href="https://github.com/akshaya118-jpg">github.com/akshaya118-jpg</a></span>
+        <span>•</span>
+        <span><i class="fa-solid fa-globe"></i> <a href="https://akshaya118-jpg.github.io">akshaya118-jpg.github.io</a></span>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="resume-section">
+      <h2 class="section-heading">Professional Summary</h2>
+      <p class="summary-text">
+        Disciplined and results-driven Business Administration student with a strong interest in logistics, supply chain management, and finance. Eager to develop practical knowledge and contribute to organizational growth by applying analytical thinking, problem-solving skills, and solid business fundamentals. A quick learner with a demonstrated academic excellence background, entrepreneurial experience in e-commerce, and corporate immersion in startup innovation ecosystems.
+      </p>
+    </section>
+
+    <!-- Education -->
+    <section class="resume-section">
+      <h2 class="section-heading">Education</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Kumaraguru College Of Liberal Arts and Science</span>
+          <span class="entry-date">Coimbatore, India</span>
+        </div>
+        <div class="entry-header">
+          <span class="entry-subtitle">Bachelor of Business Administration (BBA)</span>
+          <span class="entry-date">Ongoing</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Core Focus: Logistics & Supply Chain Strategy, Financial Accounting, Operations Management, Organizational Behavior.</li>
+          <li>Awarded Mahatma Gandhi Scholarship for securing a position among the Top 10 students across the class.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Professional Experience -->
+    <section class="resume-section">
+      <h2 class="section-heading">Professional Experience</h2>
+      
+      <!-- Experience Item 1 -->
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Forge Innovation and Ventures</span>
+          <span class="entry-date">Present</span>
+        </div>
+        <div class="entry-header">
+          <span class="entry-subtitle">Intern – Innovation Ecosystem & Venture Strategy</span>
+          <span class="entry-date">Coimbatore, India</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Engaging in innovation incubation programs, assessing enterprise challenges, and supporting venture development pipelines.</li>
+          <li>Collaborating with cross-functional teams to streamline operational workflows and organize analytical deliverables.</li>
+        </ul>
+      </div>
+
+      <!-- Experience Item 2 -->
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Direct-to-Consumer Clothing Brand</span>
+          <span class="entry-date">Active Business</span>
+        </div>
+        <div class="entry-header">
+          <span class="entry-subtitle">Co-Founder & Business Partner</span>
+          <span class="entry-date">Social Media Commerce</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Co-founded and scaled an online women's apparel brand across social media platforms in partnership with 3 partners.</li>
+          <li>Managed inventory forecasting, product cataloging, vendor sourcing, order fulfillment, and client satisfaction.</li>
+          <li>Formulated pricing models and monitored working capital to maintain profitability and steady cash flows.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills & Proficiencies -->
+    <section class="resume-section">
+      <h2 class="section-heading">Skills & Competencies</h2>
+      
+      <div class="skills-category">
+        <span class="skills-label">Technical Tools:</span>
+        <span>Microsoft Excel (Formulas, Pivot Tables, Data Modeling), PowerPoint & Executive Presentation Design, MS Word.</span>
+      </div>
+
+      <div class="skills-category">
+        <span class="skills-label">Professional Domains:</span>
+        <span>Logistics & Supply Chain Management, Cost Accounting & Management, ERP Systems, Supply Chain Finance.</span>
+      </div>
+
+      <div class="skills-category">
+        <span class="skills-label">Core Soft Skills:</span>
+        <span>Strategic Business Communication, Cross-Functional Teamwork & Collaboration, Problem Solving, Operational Discipline.</span>
+      </div>
+    </section>
+
+    <!-- Honors & Achievements -->
+    <section class="resume-section">
+      <h2 class="section-heading">Honors & Achievements</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Mahatma Gandhi Scholarship</span>
+          <span class="entry-date">Merit Honor</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Awarded prestigious merit-based scholarship of ₹10,000 for maintaining academic standing among the Top 10 rank holders in the class.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Professional Interests -->
+    <section class="resume-section">
+      <h2 class="section-heading">Professional Interests</h2>
+      <ul class="bullet-list">
+        <li><strong>Cost Accounting & Financial Management:</strong> Optimizing cost structures and margin analysis.</li>
+        <li><strong>Enterprise Resource Planning (ERP):</strong> Streamlining supply chain processes with integrated digital platforms.</li>
+        <li><strong>Supply Chain Finance:</strong> Working capital management and risk assessment in logistics networks.</li>
+      </ul>
+    </section>
+
+  </main>
+
+</body>
+</html>
