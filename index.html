@@ -986,16 +986,17 @@
               The defining highlight of our orientation was the inaugural address delivered by Mr. Kumar Rajagopalan, CEO of the Retailers Association of India (RAI).
             </p>
 
-            <!-- Keynote Image -->
-            <div class="my-4 rounded-2xl overflow-hidden bg-slate-900 border border-indigo-500/30 shadow-xl group">
+            <!-- Keynote Image with robust multi-format fallback -->
+            <div class="my-5 rounded-2xl overflow-hidden bg-slate-900 border border-indigo-500/40 shadow-2xl group">
               <img 
-                src="week-00-keynote.jpg" 
+                src="week-00-keynote.png" 
+                onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/akshaya118-jpg/akshaya118-jpg.github.io/main/week-00-keynote.jpg'" 
                 alt="Inaugural address by Mr. Kumar Rajagopalan, CEO, Retailers Association of India (RAI)" 
-                class="w-full h-auto object-cover max-h-[420px] rounded-t-xl hover:scale-[1.01] transition-transform duration-300"
-                loading="lazy"
+                class="w-full h-auto object-cover max-h-[480px] rounded-t-xl hover:scale-[1.01] transition-transform duration-300 block"
+                loading="eager"
               />
-              <div class="p-3 bg-slate-950/90 border-t border-white/5 text-center">
-                <p class="text-[11px] sm:text-xs text-slate-400 italic">
+              <div class="p-3.5 bg-slate-950/90 border-t border-white/5 text-center">
+                <p class="text-xs text-slate-300 font-medium italic">
                   Inaugural address by Mr. Kumar Rajagopalan, CEO, Retailers Association of India (RAI)
                 </p>
               </div>
@@ -1079,11 +1080,25 @@
             ? 'text-emerald-400 font-semibold' 
             : 'text-slate-400 group-hover:text-slate-200';
 
+          const cardThumbnail = (item.week === 0) ? `
+            <div class="my-2.5 rounded-xl overflow-hidden h-20 w-full relative border border-indigo-500/30 group-hover:border-indigo-400 transition-colors">
+              <img 
+                src="week-00-keynote.png" 
+                onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/akshaya118-jpg/akshaya118-jpg.github.io/main/week-00-keynote.jpg'" 
+                alt="Keynote preview" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+              <span class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-black/70 text-[9px] font-mono text-white backdrop-blur-xs">
+                Keynote
+              </span>
+            </div>
+          ` : '';
+
           card.className = `protosem-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between group cursor-pointer relative overflow-hidden text-left no-underline block ${cardBorder}`;
           
           card.innerHTML = `
             <div>
-              <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center justify-between mb-2.5">
                 <span class="text-[10px] font-mono uppercase tracking-wider text-indigo-400 font-semibold bg-indigo-500/10 px-2 py-0.5 rounded-md border border-indigo-500/20">
                   ${item.phaseLabel}
                 </span>
@@ -1092,9 +1107,10 @@
               <h5 class="text-xl sm:text-2xl font-heading font-extrabold text-white group-hover:text-indigo-300 transition-colors">
                 ${item.weekLabel}
               </h5>
+              ${cardThumbnail}
             </div>
 
-            <div class="pt-4 mt-4 border-t border-white/5 flex items-center justify-between text-[11px]">
+            <div class="pt-3 mt-3 border-t border-white/5 flex items-center justify-between text-[11px]">
               <span class="flex items-center gap-1.5 ${statusTextClass} transition-colors">
                 <span class="w-1.5 h-1.5 rounded-full ${isAvailable ? 'bg-emerald-400 animate-ping' : 'bg-indigo-400 animate-pulse'}"></span>
                 <span>${item.status}</span>
