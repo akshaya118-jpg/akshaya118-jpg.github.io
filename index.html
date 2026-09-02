@@ -860,8 +860,8 @@
        ========================================================================== */
     const protoSemWeeks = [
       // Phase 01: Weeks 00–05
-      { week: 0, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 00", status: "FIELD NOTES AVAILABLE", slug: "week-00", isPublished: true },
-      { week: 1, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 01", status: "FIELD NOTES IN PROGRESS", slug: "week-01", isPublished: false },
+      { week: 0, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 00", status: "FIELD NOTES AVAILABLE", slug: "week-00", isPublished: true, thumbnail: "week-00-keynote.png", thumbLabel: "Keynote" },
+      { week: 1, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 01", status: "FIELD NOTES AVAILABLE", slug: "week-01", isPublished: true, thumbnail: "week-01-strategy-presentation.png", thumbLabel: "Synthesis" },
       { week: 2, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 02", status: "FIELD NOTES IN PROGRESS", slug: "week-02", isPublished: false },
       { week: 3, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 03", status: "FIELD NOTES IN PROGRESS", slug: "week-03", isPublished: false },
       { week: 4, phase: 1, phaseLabel: "Phase 01", weekLabel: "WEEK 04", status: "FIELD NOTES IN PROGRESS", slug: "week-04", isPublished: false },
@@ -1022,6 +1022,302 @@
       `
     };
 
+    // Full Week 01 Reflection & Case Study Content
+    const weekOneContent = {
+      title: "Week 1 at PRICE Protosem: Building the Foundation",
+      subtitle: "Forge Innovation & Ventures",
+      readTime: "~2 Min Read",
+      bodyHtml: `
+        <div class="space-y-8">
+          
+          <!-- Header Overview -->
+          <div class="border-b border-white/5 pb-5">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-semibold border border-indigo-500/20 mb-3">
+              <i class="fa-solid fa-compass-drafting text-xs"></i>
+              <span>Phase 01 • Week 01</span>
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-heading font-extrabold text-white leading-snug">
+              Week 1 at PRICE Protosem: Building the Foundation
+            </h2>
+            <p class="text-sm text-indigo-400 font-semibold mt-1">
+              Forge Innovation & Ventures
+            </p>
+            <div class="flex items-center gap-4 text-xs text-slate-400 mt-3 font-mono">
+              <span class="flex items-center gap-1.5"><i class="fa-solid fa-book-open text-indigo-400"></i> ~2 Min Read</span>
+              <span>•</span>
+              <span class="text-emerald-400 font-semibold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Published Case Study</span>
+            </div>
+            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mt-4 pt-3 border-t border-white/5">
+              Week 1 at PRICE Protosem marked the beginning of an immersive journey into <strong class="text-white">strategy, technology, design, and business problem-solving</strong>. The week focused on understanding how data, customer insights, and structured frameworks can come together to create meaningful business solutions.
+            </p>
+          </div>
+
+          <!-- Section 01: Design, Empathy & Problem Solving -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-2 border-b border-white/5 pb-2">
+              <span class="px-2.5 py-0.5 rounded-lg bg-indigo-500/20 text-indigo-300 font-mono text-xs font-bold border border-indigo-500/30">01</span>
+              <h3 class="text-lg sm:text-xl font-heading font-bold text-white">Design, Empathy & Problem Solving</h3>
+            </div>
+
+            <!-- Event 1: Design Thinking -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/5 space-y-2">
+              <h4 class="text-base font-heading font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-users-viewfinder text-indigo-400 text-sm"></i>
+                <span>Design Thinking — Meera</span>
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Learned how to identify real customer pain points and translate observations into empathy-driven problem statements. The session focused on understanding users, identifying friction points, and approaching business challenges from the customer's perspective.
+              </p>
+            </div>
+
+            <!-- Event 2: IDEO Design Framework -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/5 space-y-2">
+              <h4 class="text-base font-heading font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-shapes text-violet-400 text-sm"></i>
+                <span>IDEO Design Framework</span>
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Explored the three-stage <strong class="text-white">IDEO framework — Inspiration, Ideation, and Implementation</strong> — to understand how observations and insights can be transformed into ideas and eventually into practical solutions. The framework highlighted the importance of iterative thinking, experimentation, and continuously refining solutions based on user needs.
+              </p>
+            </div>
+
+            <!-- Event 3: Paint Industry Challenge + Image -->
+            <div class="space-y-3">
+              <div class="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/5 space-y-2">
+                <h4 class="text-base font-heading font-bold text-white flex items-center gap-2">
+                  <i class="fa-solid fa-palette text-indigo-400 text-sm"></i>
+                  <span>Paint Industry Challenge</span>
+                </h4>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  Analyzed consumer buying behavior within the <strong class="text-white">paint industry</strong>, exploring customer preferences, purchase decision factors, product selection, brand perception, and the different touchpoints involved in the paint-buying journey. The activity provided an opportunity to understand how customer needs, product variety, retail experience, and decision-making influence purchasing behavior in the paint industry.
+                </p>
+              </div>
+
+              <!-- Image 1: Paint Industry -->
+              <div class="rounded-2xl overflow-hidden bg-slate-900 border border-indigo-500/30 shadow-xl group">
+                <img 
+                  src="week-01-paint-industry.png" 
+                  onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/akshaya118-jpg/akshaya118-jpg.github.io/main/week-01-paint-industry.jpg'" 
+                  alt="Paint Industry — Consumer Buying Behaviour" 
+                  class="w-full h-auto object-cover max-h-[500px] hover:scale-[1.01] transition-transform duration-300 block"
+                  loading="lazy"
+                />
+                <div class="p-3 bg-slate-950/90 border-t border-white/5 text-center">
+                  <p class="text-[11px] sm:text-xs text-slate-400 italic">
+                    Paint Industry — Consumer Buying Behaviour
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 02: Technology, Data & Business Strategy -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-2 border-b border-white/5 pb-2">
+              <span class="px-2.5 py-0.5 rounded-lg bg-indigo-500/20 text-indigo-300 font-mono text-xs font-bold border border-indigo-500/30">02</span>
+              <h3 class="text-lg sm:text-xl font-heading font-bold text-white">Technology, Data & Business Strategy</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+              <!-- Sub 1: Recommendation Algorithms -->
+              <div class="p-4 rounded-2xl bg-white/5 border border-white/5 space-y-2">
+                <h4 class="text-sm font-heading font-bold text-white flex items-center gap-2">
+                  <i class="fa-solid fa-code-merge text-indigo-400 text-xs"></i>
+                  <span>Recommendation Algorithms</span>
+                </h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Explored <strong class="text-white">collaborative filtering and content-based filtering</strong> to understand how recommendation systems help businesses improve product discovery and customer engagement. The session introduced how customer behavior, preferences, similarities, and product attributes can be used to generate personalized recommendations.
+                </p>
+              </div>
+
+              <!-- Sub 2: Power BI & Business Intelligence -->
+              <div class="p-4 rounded-2xl bg-white/5 border border-white/5 space-y-2">
+                <h4 class="text-sm font-heading font-bold text-white flex items-center gap-2">
+                  <i class="fa-solid fa-chart-column text-violet-400 text-xs"></i>
+                  <span>Power BI & Business Intelligence</span>
+                </h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Worked with <strong class="text-white">Power BI</strong> to understand how raw data can be transformed into meaningful business insights. Built interactive dashboards and explored how visualizations, KPIs, and data-driven reporting can support business decision-making.
+                </p>
+              </div>
+
+              <!-- Sub 3: Strategic Frameworks -->
+              <div class="p-4 rounded-2xl bg-white/5 border border-white/5 space-y-2">
+                <h4 class="text-sm font-heading font-bold text-white flex items-center gap-2">
+                  <i class="fa-solid fa-sitemap text-indigo-400 text-xs"></i>
+                  <span>Strategic Frameworks</span>
+                </h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Applied <strong class="text-white">SWOT Analysis and Value Chain Analysis</strong> to understand business operations, competitive strengths, internal capabilities, and potential areas for improvement. The activity demonstrated how structured strategic frameworks can help break down complex business problems and identify actionable opportunities.
+                </p>
+              </div>
+
+              <!-- Sub 4: Prospect Theory -->
+              <div class="p-4 rounded-2xl bg-white/5 border border-white/5 space-y-2">
+                <h4 class="text-sm font-heading font-bold text-white flex items-center gap-2">
+                  <i class="fa-solid fa-scale-balanced text-violet-400 text-xs"></i>
+                  <span>Prospect Theory</span>
+                </h4>
+                <p class="text-xs text-slate-300 leading-relaxed">
+                  Explored <strong class="text-white">Prospect Theory</strong> and its relevance to consumer decision-making. Focused on concepts such as <strong class="text-white">framing, perceived gains, perceived losses, and loss aversion</strong>, and examined how these psychological factors can influence consumer responses to pricing and business decisions.
+                </p>
+              </div>
+            </div>
+
+            <!-- Sub 5: Base64 Encoding & Project Documentation + Image -->
+            <div class="space-y-3">
+              <div class="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/5 space-y-2">
+                <h4 class="text-base font-heading font-bold text-white flex items-center gap-2">
+                  <i class="fa-solid fa-file-code text-indigo-400 text-sm"></i>
+                  <span>Base64 Encoding & Project Documentation</span>
+                </h4>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  Explored the fundamentals of <strong class="text-white">Base64 encoding</strong> and developed an understanding of how data can be represented and serialized. Alongside the technical learning, established structured documentation and portfolio practices to organize project work, learning outcomes, and future deliverables.
+                </p>
+              </div>
+
+              <!-- Image 2: Data Encoding & Tech Documentation -->
+              <div class="rounded-2xl overflow-hidden bg-slate-900 border border-indigo-500/30 shadow-xl group">
+                <img 
+                  src="week-01-tech-documentation.png" 
+                  onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/akshaya118-jpg/akshaya118-jpg.github.io/main/week-01-tech-documentation.jpg'" 
+                  alt="Data Encoding & Project Documentation" 
+                  class="w-full h-auto object-cover max-h-[420px] hover:scale-[1.01] transition-transform duration-300 block"
+                  loading="lazy"
+                />
+                <div class="p-3 bg-slate-950/90 border-t border-white/5 text-center">
+                  <p class="text-[11px] sm:text-xs text-slate-400 italic">
+                    Data Encoding & Project Documentation
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 03: WEEK HIGHLIGHT (Featured visual highlight) -->
+          <div class="p-5 sm:p-6 rounded-3xl bg-gradient-to-br from-indigo-950/40 via-purple-950/30 to-slate-900 border border-indigo-500/40 shadow-2xl space-y-5">
+            <div class="flex items-center justify-between">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 text-amber-300 border border-amber-400/20 text-xs font-bold font-mono">
+                <i class="fa-solid fa-star text-xs text-amber-400"></i>
+                <span>03 — WEEK HIGHLIGHT</span>
+              </div>
+              <span class="text-[10px] text-indigo-300 font-mono uppercase tracking-wider">Featured Masterclass</span>
+            </div>
+
+            <div class="space-y-3">
+              <h3 class="text-xl sm:text-2xl font-heading font-extrabold text-white">
+                Cross-Sector Masterclass: Agriculture, Textiles & Retail
+              </h3>
+              <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+                The week's highlight was a cross-sector masterclass covering <strong class="text-white">Agriculture, Textiles, and Retail</strong>. The session provided practical insights into how different industries operate and how operational realities influence business strategy, supply chains, customer experience, and profitability.
+              </p>
+
+              <!-- Highlight Quote -->
+              <div class="p-4 rounded-2xl bg-black/40 border border-white/10 space-y-1.5 my-3">
+                <p class="text-xs sm:text-sm text-indigo-200 italic leading-relaxed">
+                  “Strong businesses are built by understanding what happens beyond the numbers—from crop cycles and production timelines to inventory movement and customer demand.”
+                </p>
+                <span class="text-[11px] text-slate-400 font-bold block text-right">— Guest Speaker Session</span>
+              </div>
+            </div>
+
+            <!-- Featured Image (Prominent Visual Highlight) -->
+            <div class="rounded-2xl overflow-hidden bg-slate-900 border-2 border-indigo-500/50 shadow-2xl group relative">
+              <img 
+                src="week-01-masterclass-agriculture.png" 
+                onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/akshaya118-jpg/akshaya118-jpg.github.io/main/week-01-masterclass-agriculture.jpg'" 
+                alt="Cross-Sector Masterclass — Agriculture • Textiles • Retail" 
+                class="w-full h-auto object-cover max-h-[480px] hover:scale-[1.01] transition-transform duration-300 block"
+                loading="eager"
+              />
+              <div class="p-3.5 bg-slate-950/90 border-t border-white/10 text-center">
+                <p class="text-xs text-slate-200 font-semibold tracking-wide">
+                  Cross-Sector Masterclass — Agriculture • Textiles • Retail
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 04: Leadership & Execution -->
+          <div class="space-y-3">
+            <div class="flex items-center gap-2 border-b border-white/5 pb-2">
+              <span class="px-2.5 py-0.5 rounded-lg bg-indigo-500/20 text-indigo-300 font-mono text-xs font-bold border border-indigo-500/30">04</span>
+              <h3 class="text-lg sm:text-xl font-heading font-bold text-white">Leadership & Execution</h3>
+            </div>
+
+            <div class="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/5 space-y-2">
+              <h4 class="text-base font-heading font-bold text-white flex items-center gap-2">
+                <i class="fa-solid fa-flag text-indigo-400 text-sm"></i>
+                <span>Leadership & Workplace Discipline — Ram</span>
+              </h4>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Ram shared practical perspectives on <strong class="text-white">workplace discipline, consistency, ownership, execution, and maintaining momentum while working toward goals</strong>. The session emphasized that professional growth is built not only through knowledge, but also through consistency, responsibility, and disciplined execution.
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 05: Week 1 Synthesis -->
+          <div class="space-y-4">
+            <div class="flex items-center gap-2 border-b border-white/5 pb-2">
+              <span class="px-2.5 py-0.5 rounded-lg bg-indigo-500/20 text-indigo-300 font-mono text-xs font-bold border border-indigo-500/30">05</span>
+              <h3 class="text-lg sm:text-xl font-heading font-bold text-white">Week 1 Synthesis</h3>
+            </div>
+
+            <div class="space-y-3">
+              <div class="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/5 space-y-2">
+                <h4 class="text-base font-heading font-bold text-white flex items-center gap-2">
+                  <i class="fa-solid fa-chart-pie text-violet-400 text-sm"></i>
+                  <span>Strategy Presentation</span>
+                </h4>
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  Concluded Week 01 with our first <strong class="text-white">end-of-week strategy presentation</strong>, bringing together the key concepts, observations, frameworks, and analytical insights developed throughout the week. The presentation provided an opportunity to synthesize our learning and communicate our understanding of the business challenges and strategic approaches explored during the sessions.
+                </p>
+              </div>
+
+              <!-- Image 4: Strategy Presentation -->
+              <div class="rounded-2xl overflow-hidden bg-slate-900 border border-indigo-500/30 shadow-xl group">
+                <img 
+                  src="week-01-strategy-presentation.png" 
+                  onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/akshaya118-jpg/akshaya118-jpg.github.io/main/week-01-strategy-presentation.jpg'" 
+                  alt="Week 01 Strategy Presentation" 
+                  class="w-full h-auto object-cover max-h-[440px] hover:scale-[1.01] transition-transform duration-300 block"
+                  loading="lazy"
+                />
+                <div class="p-3 bg-slate-950/90 border-t border-white/5 text-center">
+                  <p class="text-[11px] sm:text-xs text-slate-400 italic">
+                    Week 01 Strategy Presentation
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section: Looking Ahead -->
+          <div class="p-5 sm:p-6 rounded-3xl bg-white/5 border border-white/10 space-y-3">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 text-xs font-semibold">
+              <i class="fa-solid fa-arrow-trend-up"></i>
+              <span>LOOKING AHEAD</span>
+            </div>
+            <h4 class="text-lg sm:text-xl font-heading font-bold text-white">
+              From Understanding to Prototyping
+            </h4>
+            <div class="space-y-3 text-xs sm:text-sm text-slate-300 leading-relaxed">
+              <p>
+                Week 1 established the building blocks for the journey ahead — <strong class="text-white">thinking from the customer's perspective, working with data, understanding business strategy, and approaching problems through structured frameworks</strong>.
+              </p>
+              <p>
+                The combination of design thinking, analytics, technology, and strategic analysis created a strong foundation for the next stage of the Protosem journey.
+              </p>
+              <p class="text-indigo-300 font-medium">
+                With these foundations in place, we're stepping into <strong class="text-white">Week 2</strong>, where the focus shifts from understanding problems to <strong class="text-white">exploring ideas, developing prototypes, testing solutions, and turning insights into action</strong>.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      `
+    };
+
     function renderProtoSem(filterPhase = 'all') {
       const container = document.getElementById('protosem-cards-root');
       if (!container) return;
@@ -1080,16 +1376,16 @@
             ? 'text-emerald-400 font-semibold' 
             : 'text-slate-400 group-hover:text-slate-200';
 
-          const cardThumbnail = (item.week === 0) ? `
+          const cardThumbnail = (item.thumbnail) ? `
             <div class="my-2.5 rounded-xl overflow-hidden h-20 w-full relative border border-indigo-500/30 group-hover:border-indigo-400 transition-colors">
               <img 
-                src="week-00-keynote.png" 
-                onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/akshaya118-jpg/akshaya118-jpg.github.io/main/week-00-keynote.jpg'" 
-                alt="Keynote preview" 
+                src="${item.thumbnail}" 
+                onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/akshaya118-jpg/akshaya118-jpg.github.io/main/${item.thumbnail}'" 
+                alt="${item.weekLabel} preview" 
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
               <span class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-black/70 text-[9px] font-mono text-white backdrop-blur-xs">
-                Keynote
+                ${item.thumbLabel || 'Preview'}
               </span>
             </div>
           ` : '';
@@ -1147,6 +1443,9 @@
       if (item.week === 0) {
         // Render Full Week 00 Reflection Article
         modalBody.innerHTML = weekZeroContent.bodyHtml;
+      } else if (item.week === 1) {
+        // Render Full Week 01 Case Study & Framework Article
+        modalBody.innerHTML = weekOneContent.bodyHtml;
       } else {
         // Render Standard Future Placeholder
         modalBody.innerHTML = `
